@@ -1,0 +1,1903 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+File Measures: 
+	Number of req in file = 0
+	Number of req sentences in file = 85
+<FailedRequirement>
+</FailedRequirement>
+<SucceededRequirement>
+	<Requirement>
+		ID: [r_2:]
+		text:  when the station signal status is (on or off), the monitor must confirm this (ack) within three time intervals.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text:  when the station signal status is (on or off), the monitor must confirm this (ack) within three time intervals.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: 
+					CTL-Formula: 
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when the station signal status is on 
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: the monitor must confirm this ack within three time intervals
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-1:]
+		text: when the monitor does not receive the status signal RCMVAR_e for 5 time intervals, it sends a request RCMVAR_req to the station .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: when the monitor does not receive the status signal RCMVAR_e for 5 time intervals, it sends a request RCMVAR_req to the station .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(¬ P)] ==> [(Q)] )
+					CTL-Formula: AG( [(¬ the monitor does not receive the status signal RCMVAR_e intervals)] ==> [(it sends a request RCMVAR_req to the station)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when the monitor does not receive the status signal RCMVAR_e for 5 time intervals
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: it sends a request RCMVAR_req to the station
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-28:]
+		text: while the aircraft is RCMVAL_onground, when the RCMTECHTERM_reverse_thrust is commanded, the control system shall enable deployment of the thrust reverser .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: while the aircraft is RCMVAL_onground, when the RCMTECHTERM_reverse_thrust is commanded, the control system shall enable deployment of the thrust reverser .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [AG((((P)) ∧ ¬((¬ Q))) ==> A[(AF((R) v ((¬ Q)))) W ((¬ Q))])] ==> [(S)] )
+					CTL-Formula: AG( [AG((((the aircraft is RCMVAL_onground)) ∧ ¬((¬ the aircraft is RCMVAL_onground))) ==> A[(AF((the RCMTECHTERM_reverse_thrust is commanded) v ((¬ the aircraft is RCMVAL_onground)))) W ((¬ the aircraft is RCMVAL_onground))])] ==> [(the control system shall enable deployment of the thrust reverser)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: while the aircraft is RCMVAL_onground 
+					C[1]==> Classification: preScope 
+					C[2]==> Extracted Text: when the RCMTECHTERM_reverse_thrust is commanded
+					C[2]==> Classification: trig
+					C[2]==> Extracted Text: the control system shall enable deployment of the thrust reverser
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-16:]
+		text: when RCMTECHTERM_liquid_level_2 is reached, the 60 second timer shall start .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: when RCMTECHTERM_liquid_level_2 is reached, the 60 second timer shall start .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(RCMTECHTERM_liquid_level_2 is reached)] ==> [(the 60 second timer shall start)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when RCMTECHTERM_liquid_level_2 is reached
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: the 60 second timer shall start
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-48:]
+		text: after the door is open, if the door is still not locked within 15 minutes, trigger alarm.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: after the door is open, if the door is still not locked within 15 minutes, trigger alarm.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG((the door is open) ==> [AG((Q) ==> AG(AF(P)))] )
+					CTL-Formula: AG((the door is open) ==> [AG((the door is still not locked within 15 minutes) ==> AG(AF(trigger alarm)))] ) 
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: after the door is open
+					C[1]==> Classification: preScope 
+					C[2]==> Extracted Text: if the door is still not locked within 15 minutes
+					C[2]==> Classification: cond 
+					C[3]==> Extracted Text: trigger alarm
+					C[3]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_003c:]
+		text:  if the switch is in position auto, the headlights are on, and the light intensity is above 70%, the lights should turn off for 3s.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text:  if the switch is in position auto, the headlights are on, and the light intensity is above 70%, the lights should turn off for 3s.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(the switch is in position auto)] ==> [(the lights should turn off for 3s)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if the switch is in position auto
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the headlights are on
+					C[2]==> Classification: act 
+					C[3]==> Extracted Text: the light intensity is above 70 %
+					C[3]==> Classification: act 
+					C[4]==> Extracted Text: the lights should turn off for 3s
+					C[4]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-36:]
+		text: while the sea conditions, when radar is sighting, the weapon operator shall fire a missile within 3 seconds .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: while the sea conditions, when radar is sighting, the weapon operator shall fire a missile within 3 seconds .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [AG((((S)) ∧ ¬((¬ R))) ==> A[(AF((Q) v ((¬ R)))) W ((¬ R))])] )
+					CTL-Formula: AG( [(radar is sighting)] ==> [AG((((the sea conditions)) ∧ ¬((¬ the sea conditions))) ==> A[(AF((the weapon operator shall fire a missile) v ((¬ the sea conditions)))) W ((¬ the sea conditions))])] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: while the sea conditions 
+					C[1]==> Classification: actScope
+					C[2]==> Extracted Text: the weapon operator shall fire a missile within 3 seconds
+					C[2]==> Classification: act 
+					C[3]==> Extracted Text: when radar is sighting
+					C[3]==> Classification: trig 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-24:]
+		text: if the computed airspeed fault flag is set, the control system shall use the modelled airspeed .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if the computed airspeed fault flag is set, the control system shall use the modelled airspeed .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(the computed airspeed fault flag is set)] ==> [(the control system shall use)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if the computed airspeed fault flag is set
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the control system shall use the modelled airspeed
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-12:]
+		text: while RCMTECHTERM_liquid_level_1 is not reached, when the start button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall open the RCMVAR_valve_0 before the emergency button is pressed .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: while RCMTECHTERM_liquid_level_1 is not reached, when the start button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall open the RCMVAR_valve_0 before the emergency button is pressed .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [AG((((¬ P)) ∧ ¬((¬ Q))) ==> A[(AF((R) v ((¬ Q)))) W ((¬ Q))])] ==> [A[((AF((S) v (T))) v AG(¬(T))) W (T)]] )
+					CTL-Formula: AG( [AG((((¬ RCMTECHTERM_liquid_level_1 is not reached)) ∧ ¬((¬ RCMTECHTERM_liquid_level_1 is not reached))) ==> A[(AF((the start button is pressed) v ((¬ RCMTECHTERM_liquid_level_1 is not reached)))) W ((¬ RCMTECHTERM_liquid_level_1 is not reached))])] ==> [A[((AF((the RCMTECHTERM_liquid_open_mixer_controller shall open the RCMVAR_valve_0) v (the emergency button is pressed))) v AG(¬(the emergency button is pressed))) W (the emergency button is pressed)]] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: while RCMTECHTERM_liquid_level_1 is not reached
+					C[1]==> Classification: preScope 
+					C[2]==> Extracted Text: when the start button is pressed
+					C[2]==> Classification: trig 
+					C[3]==> Extracted Text: the RCMTECHTERM_liquid_open_mixer_controller shall open the RCMVAR_valve_0
+					C[3]==> Classification: act 
+					C[4]==> Extracted Text: before the emergency button is pressed
+					C[4]==> Classification: actScope 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-56:]
+		text: after RCMVAR_x is RCMVAL_true for 2 seconds, when RCMVAR_z is turned to 1 for 1 second, RCMVAR_y shall be set to RCMVAL_true every 2 seconds.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: after RCMVAR_x is RCMVAL_true for 2 seconds, when RCMVAR_z is turned to 1 for 1 second, RCMVAR_y shall be set to RCMVAL_true every 2 seconds.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: 
+					CTL-Formula: 
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: after RCMVAR_x is RCMVAL_true for 2 seconds when RCMVAR_z is turned to 1 for 1 second
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: RCMVAR_y shall be set to RCMVAL_true every 2 seconds
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-44:]
+		text: the gates must be in the RCMTECHTERM_closed_state for 6 seconds before the RCMTECHTERM_railroad_crossing is safeguarded .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: the gates must be in the RCMTECHTERM_closed_state for 6 seconds before the RCMTECHTERM_railroad_crossing is safeguarded .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [A[((AF((P) v (Q))) v AG(¬(Q))) W (Q)]] )
+					CTL-Formula: AG( [A[((AF((the gates must be in the RCMTECHTERM_closed_state) v (the RCMTECHTERM_railroad_crossing is safeguarded))) v AG(¬(the RCMTECHTERM_railroad_crossing is safeguarded))) W (the RCMTECHTERM_railroad_crossing is safeguarded)]] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the gates must be in the RCMTECHTERM_closed_state for 6 seconds
+					C[1]==> Classification: act 
+					C[2]==> Extracted Text: before the RCMTECHTERM_railroad_crossing is safeguarded
+					C[2]==> Classification: actScope 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-32:]
+		text: if a single failure leads to RCMTECHTERM_deficient_aircraft_supplied_data, the RCMTECHTERM_engine_control_system shall not cause a hazardous engine effect .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if a single failure leads to RCMTECHTERM_deficient_aircraft_supplied_data, the RCMTECHTERM_engine_control_system shall not cause a hazardous engine effect .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(¬ Q)] )
+					CTL-Formula: AG( [(a single failure leads to RCMTECHTERM_deficient_aircraft_supplied_data)] ==> [(¬ the RCMTECHTERM_engine_control_system shall not cause a hazardous engine effect)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if a single failure leads to RCMTECHTERM_deficient_aircraft_supplied_data
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the RCMTECHTERM_engine_control_system shall not cause a hazardous engine effect
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-20:]
+		text: when emergency button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_2 .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: when emergency button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_2 .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(emergency button is pressed)] ==> [(the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_2)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when emergency button is pressed
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_2
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req6:]
+		text:  when RCMTECHTERM_liquid_level_2 is reached, the RCMTECHTERM_liquid_open_mixer_controller shall start stirring motor before the 60 second timer expires or emergency button is pressed.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text:  when RCMTECHTERM_liquid_level_2 is reached, the RCMTECHTERM_liquid_open_mixer_controller shall start stirring motor before the 60 second timer expires or emergency button is pressed.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [A[((AF((Q) v (R))) v AG(¬(R))) W (R)]] )
+					CTL-Formula: AG( [(reached)] ==> [A[((AF((the RCMTECHTERM_liquid_open_mixer_controller shall start stirring motor) v (the 60 second timer expires  v emergency button is pressed))) v AG(¬(the 60 second timer expires  v emergency button is pressed))) W (the 60 second timer expires  v emergency button is pressed)]] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when RCMTECHTERM_liquid_level_2 is reached
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: the RCMTECHTERM_liquid_open_mixer_controller shall start stirring motor
+					C[2]==> Classification: act 
+					C[3]==> Extracted Text: before the 60 second timer expires
+					C[3]==> Classification: actScope 
+					C[4]==> Extracted Text: emergency button is pressed
+					C[4]==> Classification: actScope 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-52:]
+		text: after RCMVAR_x is RCMVAL_true for 2 seconds if RCMVAR_z exceeds RCMVAR_m, RCMVAR_y shall be set to RCMVAL_true every 2 seconds.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: after RCMVAR_x is RCMVAL_true for 2 seconds if RCMVAR_z exceeds RCMVAR_m, RCMVAR_y shall be set to RCMVAL_true every 2 seconds.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: 
+					CTL-Formula: 
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: after RCMVAR_x is RCMVAL_true
+					C[1]==> Classification: preScope 
+					C[2]==> Extracted Text:  if RCMVAR_z exceeds RCMVAR_m
+					C[2]==> Classification: cond 
+					C[3]==> Extracted Text: RCMVAR_y shall be set to RCMVAL_true every 2 seconds
+					C[3]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-40:]
+		text: if a defect is detected at a certain valve, the RCMTECHTERM_software_control_system must be switched off for 2 seconds . after the RCMTECHTERM_software_control_system is switched off, the RCMTECHTERM_redundant_pneumatic_control must be switched on .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if a defect is detected at a certain valve, the RCMTECHTERM_software_control_system must be switched off for 2 seconds .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(a defect is detected at a certain valve)] ==> [(the RCMTECHTERM_software_control_system must be switched off)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if a defect is detected at a certain valve
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the RCMTECHTERM_software_control_system must be switched off for 2 seconds
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+			<PR>
+				Id: [2]
+				text:  after the RCMTECHTERM_software_control_system is switched off, the RCMTECHTERM_redundant_pneumatic_control must be switched on .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [AG((Q) ==> AG(AF(P)))] )
+					CTL-Formula: AG( [AG((the RCMTECHTERM_software_control_system is switched off) ==> AG(AF(the RCMTECHTERM_redundant_pneumatic_control must be switched on)))] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: after the RCMTECHTERM_software_control_system is switched off
+					C[1]==> Classification: actScope 
+					C[2]==> Extracted Text: the RCMTECHTERM_redundant_pneumatic_control must be switched on
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [r1:]
+		text:  if ambient is greater than or equal to target and timer is less than or equal to timeout then heater_command equal to off
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text:  if ambient is greater than or equal to target and timer is less than or equal to timeout then heater_command equal to off.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: 
+					CTL-Formula: 
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if ambient is greater than target 
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: if ambient equal to target 
+					C[2]==> Classification: cond 
+					C[3]==> Extracted Text: then heater_command equal to off
+					C[3]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-5:]
+		text: when countdown timer expires then the RCMTECHTERM_automatic_door_controller shall close the door .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: when countdown timer expires then the RCMTECHTERM_automatic_door_controller shall close the door .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(countdown timer expires)] ==> [(the RCMTECHTERM_automatic_door_controller shall close the door)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when countdown timer expires
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: the RCMTECHTERM_automatic_door_controller shall close the door
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-9:]
+		text: RCMVAR_simplemat checks the RCMTECHTERM_personal_code .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: RCMVAR_simplemat checks the RCMTECHTERM_personal_code .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] )
+					CTL-Formula: AG( [(RCMVAR_simplemat checks the RCMTECHTERM_personal_code)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: RCMVAR_simplemat checks the RCMTECHTERM_personal_code
+					C[1]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_pw_1_2:]
+		text:  if the driver down switch is pressed, the window must start moving down within 50 ms.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text:  if the driver down switch is pressed, the window must start moving down within 50 ms..
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(the driver down switch is pressed)] ==> [(the window must start moving)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if the driver down switch is pressed
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the window must start moving down within 50 ms.
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_pw_4_1:]
+		text:  if an obstacle is detected, the window must start moving down within 10 ms.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text:  if an obstacle is detected, the window must start moving down within 10 ms..
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(an obstacle is detected)] ==> [(the window must start  moving down)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if an obstacle is detected
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the window must start moving down within 10 ms.
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [r_1:]
+		text:  when the user input on is received and the last status signal has been off, the monitor sends the command on to the station.
+r_11: when the user input off is received and the last status signal has been on, the monitor sends the command off to the station.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text:  when the user input on is received and the last status signal has been off, the monitor sends the command on to the station.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [((P) AND (Q))] ==> [(R)] )
+					CTL-Formula: AG( [((he user input on is received) AND (the last status signal has been off))] ==> [(the monitor sends the command on to the station)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when the user input on is received
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: when the last status signal has been off
+					C[2]==> Classification: trig 
+					C[3]==> Extracted Text: the monitor sends the command on to the station
+					C[3]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+			<PR>
+				Id: [2]
+				text: r_11: when the user input off is received and the last status signal has been on, the monitor sends the command off to the station.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [((P) AND (Q))] ==> [(R)] )
+					CTL-Formula: AG( [((the user input off is received) AND (the last status signal has been on))] ==> [(the monitor sends the command off to the station)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when the user input off is received
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: when the last status signal has been on
+					C[2]==> Classification: trig 
+					C[3]==> Extracted Text: the monitor sends the command off to the station
+					C[3]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-19:]
+		text: when emergency button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1 .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: when emergency button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1 .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(emergency button is pressed)] ==> [(the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when emergency button is pressed
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-39:]
+		text: after the train has passed the RCMTECHTERM_railroad_crossing, the gates can be opened .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: after the train has passed the RCMTECHTERM_railroad_crossing, the gates can be opened .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [AG((Q) ==> AG(AF(P)))] )
+					CTL-Formula: AG( [AG((the train has passed the RCMTECHTERM_railroad_crossing) ==> AG(AF(the gates can be opened)))] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: after the train has passed the RCMTECHTERM_railroad_crossing
+					C[1]==> Classification: actScope 
+					C[2]==> Extracted Text: the gates can be opened
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-27:]
+		text: when the control system includes an overspeed protection function, the control system shall test the availability of the overspeed protection function before aircraft dispatch .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: when the control system includes an overspeed protection function, the control system shall test the availability of the overspeed protection function before aircraft dispatch .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [A[((AF((Q) v (R))) v AG(¬(R))) W (R)]] )
+					CTL-Formula: AG( [(the control system includes an overspeed protection function)] ==> [A[((AF((the control system shall test the availability of the overspeed protection function) v (aircraft dispatch))) v AG(¬(aircraft dispatch))) W (aircraft dispatch)]] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when the control system includes an overspeed protection function
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: the control system shall test the availability of the overspeed protection function
+					C[2]==> Classification: act 
+					C[3]==> Extracted Text: before aircraft dispatch
+					C[3]==> Classification: actScope
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-15:]
+		text: when RCMTECHTERM_liquid_level_2 is reached, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1 .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: when RCMTECHTERM_liquid_level_2 is reached, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1 .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(RCMTECHTERM_liquid_level_2 is reached)] ==> [(the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when RCMTECHTERM_liquid_level_2 is reached
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-47:]
+		text: after transmission, the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: after transmission, the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [AG((Q) ==> AG(AF(P)))] )
+					CTL-Formula: AG( [AG((transmission) ==> AG(AF(the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event)))] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: after transmission 
+					C[1]==> Classification: actScope
+					C[2]==> Extracted Text: after transmission the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-35:]
+		text: if an obstacle is detected for at least 50 milliseconds, the window down signal must be activated for at least 1 second .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if an obstacle is detected for at least 50 milliseconds, the window down signal must be activated for at least 1 second .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(an obstacle is detected)] ==> [(the window down signal must be activated)] ) 
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if an obstacle is detected for at least 50 milliseconds
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the window down signal must be activated for at least 1 second
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-23:]
+		text: when continuous ignition is commanded by the aircraft, the control system shall switch on continuous ignition .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: when continuous ignition is commanded by the aircraft, the control system shall switch on continuous ignition .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(continuous ignition is commanded by the aircraft)] ==> [(the control system shall switch on continuous ignition)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when continuous ignition is commanded by the aircraft
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: the control system shall switch on continuous ignition
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req1:]
+		text:  the traffic lights of the main road and of the side road must not display a green signal at the same time.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text:  the traffic lights of the main road and of the side road must not display a green signal at the same time.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [((P) AND (Q))] )
+					CTL-Formula: AG( [((the the traffic lights of the main road must not display a green signal) AND (the traffic lights of the side road must not display a green signal))] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the traffic lights of the main road must not display a green signal at the same time
+					C[1]==> Classification: act 
+					C[2]==> Extracted Text: the traffic lights of the side road must not display a green signal at the same time
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-11:]
+		text: if the RCMTECHTERM_personal_code is not valid, the RCMVAR_simplemat rejects the card .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if the RCMTECHTERM_personal_code is not valid, the RCMVAR_simplemat rejects the card .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(¬ P)] ==> [(Q)] )
+					CTL-Formula: AG( [(¬ the RCMTECHTERM_personal_code is not valid)] ==> [(the RCMVAR_simplemat rejects the card)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if the RCMTECHTERM_personal_code is not valid
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the RCMVAR_simplemat rejects the card
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-55:]
+		text: RCMVAR_y shall be set to RCMVAL_true, when RCMVAR_z is turned to 1 every 1 second before RCMVAR_x is turned to 0 for at most 1 second.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: RCMVAR_y shall be set to RCMVAL_true, when RCMVAR_z is turned to 1 every 1 second before RCMVAR_x is turned to 0 for at most 1 second.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: 
+					CTL-Formula: 
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: RCMVAR_y shall be set to RCMVAL_true
+					C[1]==> Classification: act 
+					C[2]==> Extracted Text: when RCMVAR_z is turned to 1 every 1 second
+					C[2]==> Classification: trig 
+					C[3]==> Extracted Text: before RCMVAR_x is turned to 0 for at most 1
+					C[3]==> Classification: preScope 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-43:]
+		text: after the temperature sensor has relayed the value 350, the inflow is opened if the level of the tank is less than the minimum value .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: after the temperature sensor has relayed the value 350, the inflow is opened if the level of the tank is less than the minimum value .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [AG((R) ==> AG(AF(Q)))] )
+					CTL-Formula: AG( [(the level of the tank is less than the minimum value)] ==> [AG((the temperature sensor has relayed the value 350) ==> AG(AF(the inflow is opened)))] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: after the temperature sensor has relayed the value 350
+					C[1]==> Classification: actScope 
+					C[2]==> Extracted Text: the inflow is opened
+					C[2]==> Classification: act 
+					C[3]==> Extracted Text: if the level of the tank is less than the minimum value
+					C[3]==> Classification: cond 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-31:]
+		text: when the RCMTECHTERM_engine_control_system changes operational mode, the RCMTECHTERM_engine_control_system shall maintain the engine within RCMTECHTERM_approved_operational_limits .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: when the RCMTECHTERM_engine_control_system changes operational mode, the RCMTECHTERM_engine_control_system shall maintain the engine within RCMTECHTERM_approved_operational_limits .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(the RCMTECHTERM_engine_control_system changes operational mode)] ==> [(the RCMTECHTERM_engine_control_system shall maintain the engine within RCMTECHTERM_approved_operational_limits)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when the RCMTECHTERM_engine_control_system changes operational mode
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: the RCMTECHTERM_engine_control_system shall maintain the engine within RCMTECHTERM_approved_operational_limits
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-51:]
+		text: the wolf catches a bird that is yellow.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: the wolf catches a bird that is yellow.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] )
+					CTL-Formula: AG( [(the wolf catches a bird)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the wolf catches a bird that is yellow
+					C[1]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-4:]
+		text: when RCMTECHTERM_object_proximity_sensor is activated, the RCMTECHTERM_automatic_door_controller shall open the door .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: when RCMTECHTERM_object_proximity_sensor is activated, the RCMTECHTERM_automatic_door_controller shall open the door .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(RCMTECHTERM_object_proximity_sensor is activated)] ==> [(the RCMTECHTERM_automatic_door_controller shall open the door)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when RCMTECHTERM_object_proximity_sensor is activated
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: the RCMTECHTERM_automatic_door_controller shall open the door
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [r2:]
+		text:  if timer is greater than timeout then heater_command equal to error
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text:  if timer is greater than timeout then heater_command equal to error.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(timer is greater than timeout)] ==> [(heater_command equal to error)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if timer is greater than timeout
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: then heater_command equal to error
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-8:]
+		text: when RCMTECHTERM_door_closing_limit_sensor is activated , the RCMTECHTERM_automatic_door_controller shall stop the door .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: when RCMTECHTERM_door_closing_limit_sensor is activated , the RCMTECHTERM_automatic_door_controller shall stop the door .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(RCMTECHTERM_door_closing_limit_sensor is activated)] ==> [(the RCMTECHTERM_automatic_door_controller shall stop the door)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when RCMTECHTERM_door_closing_limit_sensor is activated
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: the RCMTECHTERM_automatic_door_controller shall stop the door
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_pw_1_1:]
+		text:  if the driver up switch is pressed, the window must start moving up within 50 ms.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text:  if the driver up switch is pressed, the window must start moving up within 50 ms..
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(the driver up switch is pressed)] ==> [(the window must start moving up)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if the driver up switch is pressed
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the window must start moving up within 50 ms.
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_pw_2_2:]
+		text:  if the driver down or the passenger down switch is pressed for at most RCMVAR_auto_down_time, the auto_down mode is activated and the window continues to move down.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text:  if the driver down or the passenger down switch is pressed for at most RCMVAR_auto_down_time, the auto_down mode is activated and the window continues to move down.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: 
+					CTL-Formula: 
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if the driver the passenger down switch is pressed for at most RCMVAR_auto_down_time
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the auto_down mode is activated
+					C[2]==> Classification: act 
+					C[3]==> Extracted Text: the window continues to move down
+					C[3]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_003ab:]
+		text:  if the switch is turned to auto, and the light intensity is above 70% then the headlights should stay or turn immediately off. the headlights should continue to stay off in auto if the light intensity is not below 60%.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text:  if the switch is turned to auto, and the light intensity is above 70% then the headlights should stay or turn immediately off.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [((P) AND (Q))] ==> [((R) OR (S))] )
+					CTL-Formula: AG( [((the switch is turned to auto) AND (the light intensity is 70 %))] ==> [((the headlights should stay) OR (the headlights turn immediately off))] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if the switch is turned to auto
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: if the light intensity is above 70 %
+					C[2]==> Classification: cond 
+					C[3]==> Extracted Text: then then the headlights should stay
+					C[3]==> Classification: act 
+					C[4]==> Extracted Text: then the headlights turn immediately off
+					C[4]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+			<PR>
+				Id: [2]
+				text:  the headlights should continue to stay off in auto if the light intensity is not below 60%.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] )
+					CTL-Formula: AG( [(the light intensity is)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the headlights should continue to stay off in auto
+					C[1]==> Classification: act 
+					C[2]==> Extracted Text: if the light intensity is not below 60 %
+					C[2]==> Classification: cond 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-18:]
+		text: when emergency button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0 .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: when emergency button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0 .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(emergency button is pressed)] ==> [(the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when emergency button is pressed
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-38:]
+		text: the coffee machine shall produce hot drink every 10 seconds .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: the coffee machine shall produce hot drink every 10 seconds .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] )
+					CTL-Formula: AG( [(the coffee machine shall produce hot drink)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the coffee machine shall produce hot drink every 10 seconds
+					C[1]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-26:]
+		text:  while  the reverser door translation, the control system shall limit the thrust to minimum idle .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text:  while  the reverser door translation, the control system shall limit the thrust to minimum idle .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: 
+					CTL-Formula: 
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: while the reverser door translation the control system shall limit the thrust to minimum idle
+					C[1]==> Classification: null 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-14:]
+		text: while RCMTECHTERM_liquid_level_2 is not reached, when RCMTECHTERM_liquid_level_1 is reached, the RCMTECHTERM_liquid_open_mixer_controller shall open RCMVAR_valve_1 before emergency button is pressed .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: while RCMTECHTERM_liquid_level_2 is not reached, when RCMTECHTERM_liquid_level_1 is reached, the RCMTECHTERM_liquid_open_mixer_controller shall open RCMVAR_valve_1 before emergency button is pressed .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [AG((((¬ P)) ∧ ¬((¬ Q))) ==> A[(AF((R) v ((¬ Q)))) W ((¬ Q))])] ==> [A[((AF((S) v (T))) v AG(¬(T))) W (T)]] )
+					CTL-Formula: AG( [AG((((¬ RCMTECHTERM_liquid_level_2 is not reached)) ∧ ¬((¬ RCMTECHTERM_liquid_level_2 is not reached))) ==> A[(AF((RCMTECHTERM_liquid_level_1 is reached) v ((¬ RCMTECHTERM_liquid_level_2 is not reached)))) W ((¬ RCMTECHTERM_liquid_level_2 is not reached))])] ==> [A[((AF((the RCMTECHTERM_liquid_open_mixer_controller shall open RCMVAR_valve_1) v (emergency button is pressed))) v AG(¬(emergency button is pressed))) W (emergency button is pressed)]] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: while RCMTECHTERM_liquid_level_2 is not reached
+					C[1]==> Classification: preScope 
+					C[2]==> Extracted Text: when RCMTECHTERM_liquid_level_1 is reached
+					C[2]==> Classification: trig 
+					C[3]==> Extracted Text: the RCMTECHTERM_liquid_open_mixer_controller shall open RCMVAR_valve_1
+					C[3]==> Classification: act 
+					C[4]==> Extracted Text: before emergency button is pressed
+					C[4]==> Classification: actScope 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-46:]
+		text: while moving the window up, the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: while moving the window up, the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [AG((((R)) ∧ ¬((¬ Q))) ==> A[(AF((P) v ((¬ Q)))) W ((¬ Q))])] )
+					CTL-Formula: AG( [AG((((moving the window up)) ∧ ¬((¬ moving the window up))) ==> A[(AF((the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event) v ((¬ moving the window up)))) W ((¬ moving the window up))])] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: while moving the window up
+					C[1]==> Classification: actScope 
+					C[2]==> Extracted Text: the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_pw_3:]
+		text:  the driver commands have priority over the passenger commands.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text:  the driver commands have priority over the passenger commands.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] )
+					CTL-Formula: AG( [(the driver commands have priority over the passenger commands)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the driver commands have priority over the passenger commands
+					C[1]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-34:]
+		text: if an obstacle is detected for at least 50 milliseconds, the window down signal must be activated for minimum time interval 1 second .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if an obstacle is detected for at least 50 milliseconds, the window down signal must be activated for minimum time interval 1 second .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(an obstacle is detected)] ==> [(the window down signal must be activated for minimum time  interval 1 second)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if an obstacle is detected for at least 50 milliseconds
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the window down signal must be activated for minimum time  interval 1 second
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-22:]
+		text: the control system shall prevent engine overspeed .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: the control system shall prevent engine overspeed .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] )
+					CTL-Formula: AG( [(the control system shall prevent engine overspeed)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the control system shall prevent engine overspeed
+					C[1]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req14:]
+		text:  when over_speed protection is if through hydromechanical means, the frequency of RCMTECHTERM_engine_control_system inspection and maintenance periods shall be consistent with the required availability of the feature.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text:  when over_speed protection is if through hydromechanical means, the frequency of RCMTECHTERM_engine_control_system inspection and maintenance periods shall be consistent with the required availability of the feature.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: 
+					CTL-Formula: 
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when over_speed protection is
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: if through hydromechanical means the frequency of RCMTECHTERM_engine_control_system inspection maintenance periods shall be consistent with the required availability of the feature
+					C[2]==> Classification: cond 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-10:]
+		text: if the RCMTECHTERM_personal_code is valid, the RCMVAR_simplemat accepts the card .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if the RCMTECHTERM_personal_code is valid, the RCMVAR_simplemat accepts the card .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(the RCMTECHTERM_personal_code is valid)] ==> [(the RCMVAR_simplemat accepts the card)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if the RCMTECHTERM_personal_code is valid
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the RCMVAR_simplemat accepts the card
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-54:]
+		text: before RCMVAR_x is RCMVAL_true for 2 seconds, when RCMVAR_z is turned to 1 for 1 second, RCMVAR_y shall be set to RCMVAL_true every 2 seconds.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: before RCMVAR_x is RCMVAL_true for 2 seconds, when RCMVAR_z is turned to 1 for 1 second, RCMVAR_y shall be set to RCMVAL_true every 2 seconds.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: 
+					CTL-Formula: 
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: before RCMVAR_x is RCMVAL_true for 2 seconds when RCMVAR_z is turned to 1 for 1 second
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: RCMVAR_y shall be set to RCMVAL_true every 2 seconds
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-42:]
+		text: the inflow must be opened before the temperature sensor has relayed the value 400 .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: the inflow must be opened before the temperature sensor has relayed the value 400 .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [A[((AF((P) v (Q))) v AG(¬(Q))) W (Q)]] )
+					CTL-Formula: AG( [A[((AF((the inflow must be opened) v (the temperature sensor has relayed the value 400))) v AG(¬(the temperature sensor has relayed the value 400))) W (the temperature sensor has relayed the value 400)]] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the inflow must be opened
+					C[1]==> Classification: act 
+					C[2]==> Extracted Text: before the temperature sensor has relayed the value 400
+					C[2]==> Classification: actScope 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-30:]
+		text: when selecting idle setting, if aircraft data is unavailable, the control system shall select idle approach .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: when selecting idle setting, if aircraft data is unavailable, the control system shall select idle approach .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [([(P)] ==> [(Q)])] ==> [(R)] )
+					CTL-Formula: AG( [([(selecting idle setting)] ==> [(aircraft data is unavailable)])] ==> [(the control system shall select idle approach)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when selecting idle setting
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: if aircraft data is unavailable
+					C[2]==> Classification: cond 
+					C[3]==> Extracted Text: the control system shall select idle approach
+					C[3]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req8:]
+		text:  when the 60 second timer expires, the RCMTECHTERM_liquid_open_mixer_controller shall open RCMVAR_valve_2 before the 120 second timer expires or emergency button is pressed.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text:  when the 60 second timer expires, the RCMTECHTERM_liquid_open_mixer_controller shall open RCMVAR_valve_2 before the 120 second timer expires or emergency button is pressed.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [A[((AF((Q) v (R))) v AG(¬(R))) W (R)]] )
+					CTL-Formula: AG( [(the 60 second timer expires)] ==> [A[((AF((the RCMTECHTERM_liquid_open_mixer_controller shall open RCMVAR_valve_2) v (the 120 second timer expires  v emergency button is pressed))) v AG(¬(the 120 second timer expires  v emergency button is pressed))) W (the 120 second timer expires  v emergency button is pressed)]] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when the 60 second timer expires
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: the RCMTECHTERM_liquid_open_mixer_controller shall open RCMVAR_valve_2
+					C[2]==> Classification: act 
+					C[3]==> Extracted Text: before the 120 second timer expires
+					C[3]==> Classification: actScope 
+					C[4]==> Extracted Text: emergency button is pressed
+					C[4]==> Classification: actScope 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req10:]
+		text:  the RCMTECHTERM_engine_control_system shall not cause unacceptable thrust or power oscillations.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text:  the RCMTECHTERM_engine_control_system shall not cause unacceptable thrust or power oscillations.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(¬ P)] )
+					CTL-Formula: AG( [(¬ the RCMTECHTERM_engine_control_system shall not cause unacceptable oscillations)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the RCMTECHTERM_engine_control_system shall not cause unacceptable oscillations
+					C[1]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-50:]
+		text: every animal RCMVAR_a eats all animals RCMVAR_b that are smaller than RCMVAR_a.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: every animal RCMVAR_a eats all animals RCMVAR_b that are smaller than RCMVAR_a.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] )
+					CTL-Formula: AG( [(every animal RCMVAR_a eats all animals RCMVAR_b)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: every animal RCMVAR_a eats all animals RCMVAR_b that are smaller than RCMVAR_a
+					C[1]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-3:]
+		text: timer equals previous timer #Plus# 1 .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: timer equals previous timer #Plus# 1 .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] )
+					CTL-Formula: AG( [(timer equals previous timer  #Plus# 1)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: timer equals previous timer  #Plus# 1
+					C[1]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-7:]
+		text: when RCMTECHTERM_object_proximity_sensor is activated , the RCMTECHTERM_automatic_door_controller shall open the door .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: when RCMTECHTERM_object_proximity_sensor is activated , the RCMTECHTERM_automatic_door_controller shall open the door .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(RCMTECHTERM_object_proximity_sensor is activated)] ==> [(the RCMTECHTERM_automatic_door_controller shall open the door)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when RCMTECHTERM_object_proximity_sensor is activated
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: the RCMTECHTERM_automatic_door_controller shall open the door
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_pw_2_1:]
+		text:  if the driver up or the passenger up switch is pressed for at most RCMVAR_auto_up_time, the auto_up mode is activated and the window continues to move up.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text:  if the driver up or the passenger up switch is pressed for at most RCMVAR_auto_up_time, the auto_up mode is activated and the window continues to move up.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: 
+					CTL-Formula: 
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if the driver the passenger up switch is pressed for at most RCMVAR_auto_up_time
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the auto_up mode is activated
+					C[2]==> Classification: act 
+					C[3]==> Extracted Text: the window continues to move up
+					C[3]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [r_3:]
+		text:  when the monitor receives no status signal (ε) for 5 time intervals, it sends a request to the station.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text:  when the monitor receives no status signal (ε) for 5 time intervals, it sends a request to the station.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(the monitor receives no status signal intervals)] ==> [(it sends a request to the station)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when the monitor receives no status signal for 5 time intervals
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: it sends a request to the station
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-2:]
+		text: if timer is greater than RCMVAR_timeout, the RCMVAR_heater_command equals RCMVAL_error .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if timer is greater than RCMVAR_timeout, the RCMVAR_heater_command equals RCMVAL_error .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(timer is greater than RCMVAR_timeout)] ==> [(the RCMVAR_heater_command equals RCMVAL_error)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if timer is greater than RCMVAR_timeout
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the RCMVAR_heater_command equals RCMVAL_error
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_003aa:]
+		text:  if the switch is turned to auto, and the light intensity is 70 then the headlights should stay or turn immediately on. the headlights should continue to stay on in auto if the light intensity is not above 70.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text:  if the switch is turned to auto, and the light intensity is 70 then the headlights should stay or turn immediately on.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [((P) AND (Q))] ==> [((R) OR (S))] )
+					CTL-Formula: AG( [((turned) AND (the light intensity is 70))] ==> [((the headlights should stay) OR (the headlights turn))] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if the switch is turned to auto
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: if the light intensity is 70
+					C[2]==> Classification: cond 
+					C[3]==> Extracted Text: then then the headlights should stay immediately on
+					C[3]==> Classification: act 
+					C[4]==> Extracted Text: then the headlights turn
+					C[4]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+			<PR>
+				Id: [2]
+				text:  the headlights should continue to stay on in auto if the light intensity is not above 70.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(the light intensity is above 70)] ==> [(the headlights should continue stay)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the headlights should continue to stay on in auto
+					C[1]==> Classification: act 
+					C[2]==> Extracted Text: if the light intensity is not above 70
+					C[2]==> Classification: cond 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-29:]
+		text: while the aircraft is RCMVAL_inflight, if the RCMTECHTERM_reverse_thrust is commanded, the control system shall inhibit RCMTECHTERM_thrust_reverser_deployment .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: while the aircraft is RCMVAL_inflight, if the RCMTECHTERM_reverse_thrust is commanded, the control system shall inhibit RCMTECHTERM_thrust_reverser_deployment .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [AG((((P)) ∧ ¬((¬ Q))) ==> A[(AF((R) v ((¬ Q)))) W ((¬ Q))])] ==> [(S)] )
+					CTL-Formula: AG( [AG((((the aircraft is RCMVAL_inflight)) ∧ ¬((¬ the aircraft is RCMVAL_inflight))) ==> A[(AF((the RCMTECHTERM_reverse_thrust is commanded) v ((¬ the aircraft is RCMVAL_inflight)))) W ((¬ the aircraft is RCMVAL_inflight))])] ==> [(the control system shall inhibit RCMTECHTERM_thrust_reverser_deployment)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: while the aircraft is RCMVAL_inflight
+					C[1]==> Classification: preScope 
+					C[2]==> Extracted Text: if the RCMTECHTERM_reverse_thrust is commanded
+					C[2]==> Classification: cond 
+					C[3]==> Extracted Text: the control system shall inhibit RCMTECHTERM_thrust_reverser_deployment
+					C[3]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-17:]
+		text: when 60 second timer expires, the 120 second timer shall start .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: when 60 second timer expires, the 120 second timer shall start .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(60 second timer expires)] ==> [(the 120 second timer shall start)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when 60 second timer expires
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: the 120 second timer shall start
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-49:]
+		text: when blood pressure is monitored every 2 hours, if the blood pressure is higher than 200 for more than 4 hours, notify the medical staff.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: when blood pressure is monitored every 2 hours, if the blood pressure is higher than 200 for more than 4 hours, notify the medical staff.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [([(P)] ==> [(Q)])] ==> [(R)] )
+					CTL-Formula: AG( [([(blood pressure is monitored)] ==> [(the blood pressure is higher than 200)])] ==> [(notify the medical staff)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when blood pressure is monitored every 2 hours
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: if the blood pressure is higher than 200 for more than 4 hours
+					C[2]==> Classification: cond 
+					C[3]==> Extracted Text: notify the medical staff
+					C[3]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_003b:]
+		text:  if the switch is in position auto, the headlights are off, and the light intensity falls below 60%, the lights should turn on for 2s.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text:  if the switch is in position auto, the headlights are off, and the light intensity falls below 60%, the lights should turn on for 2s.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [((Q) AND (R) AND (S))] )
+					CTL-Formula: AG( [(the switch is in position auto)] ==> [((the headlights are off) AND (the light intensity falls) AND (the lights should turn on))] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if the switch is in position auto
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the headlights are off
+					C[2]==> Classification: act 
+					C[3]==> Extracted Text: the light intensity falls below 60 %
+					C[3]==> Classification: act 
+					C[4]==> Extracted Text: the lights should turn on for 2s
+					C[4]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-37:]
+		text: the communication system shall sustain telephone contact with 10 while the absence of external power .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: the communication system shall sustain telephone contact with 10 while the absence of external power .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [AG((((R)) ∧ ¬((¬ Q))) ==> A[(AF((P) v ((¬ Q)))) W ((¬ Q))])] )
+					CTL-Formula: AG( [AG((((the absence of external power)) ∧ ¬((¬ the absence of external power))) ==> A[(AF((the communication system shall sustain telephone contact with 10) v ((¬ the absence of external power)))) W ((¬ the absence of external power))])] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: while the absence of external power
+					C[1]==> Classification: actScope
+					C[2]==> Extracted Text: the communication system shall sustain telephone contact with 10 
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-25:]
+		text: while the aircraft is RCMVAL_inflight, the control system shall maintain the engine fuel flow above RCMVAR_xx .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: while the aircraft is RCMVAL_inflight, the control system shall maintain the engine fuel flow above RCMVAR_xx .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [AG((((R)) ∧ ¬((¬ Q))) ==> A[(AF((P) v ((¬ Q)))) W ((¬ Q))])] )
+					CTL-Formula: AG( [AG((((the aircraft is RCMVAL_inflight)) ∧ ¬((¬ the aircraft is RCMVAL_inflight))) ==> A[(AF((the control system shall maintain the engine fuel flow above RCMVAR_xx) v ((¬ the aircraft is RCMVAL_inflight)))) W ((¬ the aircraft is RCMVAL_inflight))])] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: while the aircraft is RCMVAL_inflight
+					C[1]==> Classification: actScope 
+					C[2]==> Extracted Text: the control system shall maintain the engine fuel flow above RCMVAR_xx
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-69:]
+		text: the customer enters a card and a RCMTECHTERM_personal_code.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: the customer enters a card and a RCMTECHTERM_personal_code.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [((P) AND (Q))] )
+					CTL-Formula: AG( [((the customer enters a card) AND (the customer enters a RCMTECHTERM_personal_code))] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the customer enters a card 
+					C[1]==> Classification: act
+					C[2]==> Extracted Text: the customer enters a RCMTECHTERM_personal_code
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-13:]
+		text: when RCMTECHTERM_liquid_level_1 is reached, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0 .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: when RCMTECHTERM_liquid_level_1 is reached, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0 .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(RCMTECHTERM_liquid_level_1 is reached)] ==> [(the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when RCMTECHTERM_liquid_level_1 is reached
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-57:]
+		text: when the button is pressed, if RCMVAR_x is RCMVAL_on within 10 seconds, turn RCMVAR_y to RCMVAL_true.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: when the button is pressed, if RCMVAR_x is RCMVAL_on within 10 seconds, turn RCMVAR_y to RCMVAL_true.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [([(P)] ==> [(Q)])] ==> [(R)] )
+					CTL-Formula: AG( [([(the button is pressed)] ==> [(RCMVAR_x is RCMVAL_on)])] ==> [(turn RCMVAR_y to RCMVAL_true)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when the button is pressed
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: if RCMVAR_x is RCMVAL_on within 10 seconds
+					C[2]==> Classification: cond 
+					C[3]==> Extracted Text: turn RCMVAR_y to RCMVAL_true
+					C[3]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-45:]
+		text: while moving, the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: while moving, the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] )
+					CTL-Formula: AG( [(the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event
+					C[1]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-33:]
+		text: while in a RCMVAL_fullup configuration, the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: while in a RCMVAL_fullup configuration, the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] )
+					CTL-Formula: AG( [(the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event
+					C[1]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-21:]
+		text: when emergency button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall stop stirring motor .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: when emergency button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall stop stirring motor .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(emergency button is pressed)] ==> [(the RCMTECHTERM_liquid_open_mixer_controller shall stop stirring motor)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when emergency button is pressed
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: the RCMTECHTERM_liquid_open_mixer_controller shall stop stirring motor
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-53:]
+		text: after RCMVAR_x is RCMVAL_true for 2 seconds, the entry whose index is larger than 2 shall be set to 1.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: after RCMVAR_x is RCMVAL_true for 2 seconds, the entry whose index is larger than 2 shall be set to 1.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [AG((Q) ==> AG(AF(P)))] )
+					CTL-Formula: AG( [AG((RCMVAR_x is RCMVAL_true) ==> AG(AF(the entry shall be set to 1)))] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: after RCMVAR_x is RCMVAL_true for 2 seconds
+					C[1]==> Classification: actScope 
+					C[2]==> Extracted Text: the entry whose index is larger than 2 shall be set to 1
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-41:]
+		text: the safeguard of a RCMTECHTERM_level_crossing is terminated, after the RCMTECHTERM_railroad_crossing has been completely vacated if the train had passed .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: the safeguard of a RCMTECHTERM_level_crossing is terminated, after the RCMTECHTERM_railroad_crossing has been completely vacated if the train had passed .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG((R) ==> [AG((Q) ==> AG(AF(P)))] )
+					CTL-Formula: AG((the train had passed) ==> [AG((the RCMTECHTERM_railroad_crossing has been completely vacated) ==> AG(AF(the safeguard of a RCMTECHTERM_level_crossing is terminated)))] ) 
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the safeguard of a RCMTECHTERM_level_crossing is terminated
+					C[1]==> Classification: act 
+					C[2]==> Extracted Text: after the RCMTECHTERM_railroad_crossing has been completely vacated
+					C[2]==> Classification: preScope 
+					C[3]==> Extracted Text: if the train had passed
+					C[3]==> Classification: cond 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-6:]
+		text: when RCMTECHTERM_door_closing_limit_sensor is activated then the RCMTECHTERM_automatic_door_controller shall stop the door .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: when RCMTECHTERM_door_closing_limit_sensor is activated then the RCMTECHTERM_automatic_door_controller shall stop the door .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(when RCMTECHTERM_door_closing_limit_sensor is activated)] ==> [(the RCMTECHTERM_automatic_door_controller shall stop)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when RCMTECHTERM_door_closing_limit_sensor is activated
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: the RCMTECHTERM_automatic_door_controller shall stop the door
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [r22:]
+		text:  when door opening limit sensor is activated then the RCMTECHTERM_automatic_door_controller shall stop the door and start the count down timer.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text:  when door opening limit sensor is activated then the RCMTECHTERM_automatic_door_controller shall stop the door and start the count down timer.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: 
+					CTL-Formula: 
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when door opening limit sensor is activated then
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: the RCMTECHTERM_automatic_door_controller shall stop the door
+					C[2]==> Classification: act 
+					C[3]==> Extracted Text: the RCMTECHTERM_automatic_door_controller start the count down timer
+					C[3]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [r0:]
+		text:  if ambient is less than target and timer is less than or equal to timeout then heater_command equals to on
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text:  if ambient is less than target and timer is less than or equal to timeout then heater_command equals to on.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(ambient is less)] ==> [(heater_command equals)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if ambient is less than target
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: than than than target is less than
+					C[2]==> Classification: act 
+					C[3]==> Extracted Text: than than timer is less than
+					C[3]==> Classification: act 
+					C[4]==> Extracted Text: than target equal to timeout
+					C[4]==> Classification: act 
+					C[5]==> Extracted Text: then heater_command equals to on
+					C[5]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_pw_4_2:]
+		text:  when an obstacle is detected, the window must move down for RCMVAR_emergency_down_time or before the bottom end is reached.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text:  when an obstacle is detected, the window must move down for RCMVAR_emergency_down_time or before the bottom end is reached.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [A[((AF((Q) v (R))) v AG(¬(R))) W (R)]] )
+					CTL-Formula: AG( [(an obstacle is detected)] ==> [A[((AF((the must move down) v (the bottom end is reached))) v AG(¬(the bottom end is reached))) W (the bottom end is reached)]] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: when an obstacle is detected
+					C[1]==> Classification: trig 
+					C[2]==> Extracted Text: the the the window must move down for RCMVAR_emergency_down_time
+					C[2]==> Classification: act 
+					C[3]==> Extracted Text: before the bottom end is reached
+					C[3]==> Classification: actScope
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+</SucceededRequirement>
