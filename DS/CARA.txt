@@ -1,0 +1,57 @@
+Req-01: The CARA will be operational whenever the <LSTAT> is [poweredOn]. 
+%%%
+Req-07: If an occlusion is detected, and the auto control mode is running, the auto control mode will be terminated. 
+%%%
+Req-08: If the Air Ok signal is Low, the auto control mode is terminated  within 3  sec. 
+%%%
+Req-13C1: If the arterial line and the pulse wave are corroborated, and the cuff is available, the next the arterial line is selected. 
+%%%
+Req-13C2: If the pulse wave is corroborated, and the cuff is available, and the arterial line is not corroborated, the next pulse wave is selected. 
+%%%
+R-13C3:  	
+%%%
+Req-16: If a pump is plugged in, and an infusate is ready, and the occlusion line is clear, the auto control mode can be started. 
+%%%
+Req-17C1: When the auto control mode is running, the cuff will be inflated.
+%%%
+Req-17C2: If the start auto control button is pressed, and the cuff is not available, an alarm is issued and the override selection is provided. 
+Req-17C3: If the alarm_reset_button is pressed, the alarm is disabled. 
+%%%
+Req-17C4: When the override selection is provided, if the override_yes is pressed, and the arterial line is not corroborated, the next arterial line is selected.
+%%%
+Req-17C5: When the override selection is provided, if the override_yes is pressed, and the arterial line is corroborated, and the pulse wave is not corroborated, the next pulse wave is selected.
+%%%
+Req-17C6: When the override selection is provided, if the override_no is pressed, the next manual mode is started.
+%%%
+Req-17C7: If the cuff and the arterial line and the pulse wave are not available, the next manual mode is started.
+%%%
+Req-20: If the manual mode is running and the start auto control button is pressed, the next corroboration is triggered.
+
+%%%
+Req-28: If a valid blood pressure is unavailable  after at least 180  sec, the manual mode should be triggered.
+%%%
+Req-32C1: If the pulse wave or the arterial line is available, and cuff is selected, corroboration is triggered.
+%%%
+Req-32C2: If the pulse wave is selected, and the arterial line is available, corroboration is triggered.
+%%%
+Req-34: When the auto control mode is running, the terminate auto control button should be available.
+%%%
+Req-42: When the auto control mode is running, and the arterial line or the pulse wave or cuff is lost, an alarm should sound in 60 seconds.
+%%%
+Req-44: If the pulse wave and the arterial line are unavailable, and cuff is selected, and the blood pressure is not valid, the next the manual mode is started.
+%%%
+Req-48C1: whenever the terminate auto control button is selected, a confirmation button is available.
+%%%
+Req-48C2: If a confirmation button is available, and the confirmation_yes is pressed, the manual mode is started.
+%%%
+Req-48C3: If a confirmation button is available, and the confirmation_no is pressed, the auto control mode is running.
+%%%
+Req-48C4: If a confirmation button is available, and the confirmation_yes is pressed, the next confirmation_yes is disabled. 
+%%%
+Req-48C5: If a confirmation button is available, and the confirmation_no is pressed, the next confirmation_no is disabled. 
+%%%
+Req-48C6: If a confirmation button is available and the terminate auto control button is pressed, the next terminate auto control button is disabled. 
+%%%
+Req-49: When a the start auto control button  is enabled,  the start auto control button is enabled until it is pressed. 
+%%%
+Req-54: If auto control mode is running, and the impedance reading is unavailable, the next auto control model is terminated. 
