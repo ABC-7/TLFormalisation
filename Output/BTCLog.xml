@@ -1,0 +1,1033 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+File Measures: 
+	Number of req in file = 0
+	Number of req sentences in file = 45
+<FailedRequirement>
+	<Requirement>
+		ID: [req_41:]
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if the wipers are active within the next 30 seconds, the wipers are active for at most 30 seconds or before the windshield is dry.
+			</PR>
+		</ReqSentence>
+	</Requirement>
+</FailedRequirement>
+<SucceededRequirement>
+	<Requirement>
+		ID: [req_2:]
+		text: the parking sensor beeps while an obstacle is detected.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: the parking sensor beeps while an obstacle is detected.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [AG((((R)) ∧ ¬((¬ Q))) ==> A[(AF((P) v ((¬ Q)))) W ((¬ Q))])] )
+					CTL-Formula: AG( [AG((((an obstacle is detected)) ∧ ¬((¬ an obstacle is detected))) ==> A[(AF((the parking sensor beeps) v ((¬ an obstacle is detected)))) W ((¬ an obstacle is detected))])] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the parking sensor beeps
+					C[1]==> Classification: act 
+					C[2]==> Extracted Text: while an obstacle is detected
+					C[2]==> Classification: actScope 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_6:]
+		text: the parking sensor beeps for at most 10 seconds while an obstacle is detected.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: the parking sensor beeps for at most 10 seconds while an obstacle is detected.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [AG((((R)) ∧ ¬((¬ Q))) ==> A[(AF((P) v ((¬ Q)))) W ((¬ Q))])] )
+					CTL-Formula: AG( [AG((((an obstacle is detected)) ∧ ¬((¬ an obstacle is detected))) ==> A[(AF((the parking sensor beeps) v ((¬ an obstacle is detected)))) W ((¬ an obstacle is detected))])] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the parking sensor beeps for at most 10 seconds
+					C[1]==> Classification: act 
+					C[2]==> Extracted Text: while an obstacle is detected
+					C[2]==> Classification: actScope 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_4:]
+		text: the fuel display blinks if the fuel level is low.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: the fuel display blinks if the fuel level is low.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(the fuel level is low)] ==> [(the fuel display blinks)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the fuel display blinks
+					C[1]==> Classification: act 
+					C[2]==> Extracted Text: if the fuel level is low
+					C[2]==> Classification: cond 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_8:]
+		text: if a crash is detected, an emergency signal is sent within 10 second.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if a crash is detected, an emergency signal is sent within 10 second.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [( a crash is detected)] ==> [( an emergency signal is sent)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if a crash is detected
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: an emergency signal is sent within 10 second
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_16:]
+		text: if it rains, the wipers are RCMVAL_on after 30 seconds.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if it rains, the wipers are RCMVAL_on after 30 seconds.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(it rains)] ==> [(the wipers are RCMVAL_on)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if it rains
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the wipers are RCMVAL_on after 30 seconds
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_38:]
+		text: if it is dark and the lights are RCMVAL_on, the lights are RCMVAL_on before it is bright within 10 minutes.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if it is dark and the lights are RCMVAL_on, the lights are RCMVAL_on before it is bright within 10 minutes.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [A[((AF(((Q) AND (R)) v (P))) v AG(¬(P))) W (P)]] ==> [(S)] )
+					CTL-Formula: AG( [A[((AF(((it is dark) AND (the lights are RCMVAL_on)) v (it is bright))) v AG(¬(it is bright))) W (it is bright)]] ==> [(the lights are RCMVAL_on)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if it is dark
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the lights are RCMVAL_on
+					C[2]==> Classification: act 
+					C[3]==> Extracted Text: if the lights are RCMVAL_on
+					C[3]==> Classification: cond 
+					C[4]==> Extracted Text: before it is bright within 10 minutes
+					C[4]==> Classification: preScope 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_26:]
+		text: the display elements glow.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: the display elements glow.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] )
+					CTL-Formula: AG( [(the display elements glow)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the display elements glow
+					C[1]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_14:]
+		text: if it rains, the wipers are RCMVAL_on for 30 seconds.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if it rains, the wipers are RCMVAL_on for 30 seconds.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(it rains)] ==> [(the wipers are RCMVAL_on)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if it rains
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the wipers are RCMVAL_on for 30 seconds
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_36:]
+		text: if a crash is detected and the airbags are not released, the airbags are released exactly after 10 seconds.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if a crash is detected and the airbags are not released, the airbags are released exactly after 10 seconds.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [((P) AND (Q))] ==> [(R)] )
+					CTL-Formula: AG( [(( a crash is detected) AND (the airbags are not released)] ==> [(the airbags are released)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if a crash is detected
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: if the airbags are not released
+					C[2]==> Classification: cond 
+					C[3]==> Extracted Text: the airbags are released exactly after 10 seconds
+					C[3]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_24:]
+		text: the electricity circuit is active.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: the electricity circuit is active.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] )
+					CTL-Formula: AG( [(the electricity circuit is active)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the electricity circuit is active
+					C[1]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_18:]
+		text: if it rains for 1 minute, the wipers are activated.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if it rains for 1 minute, the wipers are activated.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(it rains)] ==> [(the wipers are activated)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if it rains for 1 minute
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the wipers are activated
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_28:]
+		text: the radio is powered within 5 seconds.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: the radio is powered within 5 seconds.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] )
+					CTL-Formula: AG( [(the radio is powered)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the radio is powered within 5 seconds
+					C[1]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_30:]
+		text: the airbag is not activated before a crash is detected.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: the airbag is not activated before a crash is detected.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [A[((AF((¬ P) v (Q))) v AG(¬(Q))) W (Q)]] )
+					CTL-Formula: AG( [A[((AF((¬ the airbag is not activated) v (a crash is detected))) v AG(¬(a crash is detected))) W (a crash is detected)]] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the airbag is not activated
+					C[1]==> Classification: act 
+					C[2]==> Extracted Text: before a crash is detected
+					C[2]==> Classification: actScope 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_40:]
+		text: if it rains for 1 minute, the wipers are active within 30 seconds before the wipers are active and the windshield is dry.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if it rains for 1 minute, the wipers are active within 30 seconds before the wipers are active and the windshield is dry.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [A[((AF((Q) v (R))) v AG(¬(R))) W (R)]] )
+					CTL-Formula: AG( [(it rains)] ==> [A[((AF((the wipers are active) v (the wipers are active))) v AG(¬(the wipers are active))) W (the wipers are active)]] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if it rains for 1 minute
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the wipers are active
+					C[2]==> Classification: act 
+					C[3]==> Extracted Text: before the wipers are active
+					C[3]==> Classification: actScope 
+					C[4]==> Extracted Text: the windshield is dry
+					C[4]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_12:]
+		text: if it rains and the wipers are active, the wipers are active for 30 seconds.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if it rains and the wipers are active, the wipers are active for 30 seconds.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [((P) AND (Q))] ==> [(R)] )
+					CTL-Formula: AG( [((it rains) AND (the wipers are active))] ==> [(the wipers are active)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if it rains
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: if the wipers are active
+					C[2]==> Classification: cond 
+					C[3]==> Extracted Text: the wipers are active for 30 seconds
+					C[3]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_34:]
+		text: if the window moves up and an obstacle is detected, the window must start moving down within less than 10 seconds.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if the window moves up and an obstacle is detected, the window must start moving down within less than 10 seconds.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [((P) AND (Q))] ==> [(R)] )
+					CTL-Formula: AG( [((the window moves up) AND (an obstacle is detected))] ==> [(the window must start moving down)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if the window moves up
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: if an obstacle is detected
+					C[2]==> Classification: cond 
+					C[3]==> Extracted Text: the window must start moving down within less than 10 seconds
+					C[3]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_22:]
+		text: if it rains for 1 minute, the wipers are active within 1 minute.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if it rains for 1 minute, the wipers are active within 1 minute.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(it rains)] ==> [(the wipers are active)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if it rains for 1 minute
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the wipers are active within 1 minute
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_44:]
+		text: if it rains and the wipers are active, the wipers are active for 30 seconds.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if it rains and the wipers are active, the wipers are active for 30 seconds.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [((P) AND (Q))] ==> [(R)] )
+					CTL-Formula: AG( [((it rains) AND (the wipers are active))] ==> [(the wipers are active)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if it rains
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: if the wipers are active
+					C[2]==> Classification: cond 
+					C[3]==> Extracted Text: the wipers are active for 30 seconds
+					C[3]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_10:]
+		text: if a crash is detected, an emergency signal is sent.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if a crash is detected, an emergency signal is sent.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(a crash is detected)] ==> [(an emergency signal is sent)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if a crash is detected
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: an emergency signal is sent
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_32:]
+		text: if it is dark, the lights are RCMVAL_on before it is bright for at most 10 minutes.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if it is dark, the lights are RCMVAL_on before it is bright for at most 10 minutes.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [A[((AF((Q) v (R))) v AG(¬(R))) W (R)]] )
+					CTL-Formula: AG( [(it is dark)] ==> [A[((AF((the lights are RCMVAL_on) v (it is bright))) v AG(¬(it is bright))) W (it is bright)]] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if it is dark
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the lights are RCMVAL_on
+					C[2]==> Classification: act 
+					C[3]==> Extracted Text: before it is bright for at most 10 minutes
+					C[3]==> Classification: actScope 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_20:]
+		text: if it rains for 1 minute, the wipers are activated within 30 seconds before the windscreen is dry.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if it rains for 1 minute, the wipers are activated within 30 seconds before the windscreen is dry.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [A[((AF((Q) v (R))) v AG(¬(R))) W (R)]] )
+					CTL-Formula: AG( [(it rains)] ==> [A[((AF((the wipers are activated) v (the windscreen is dry))) v AG(¬(the windscreen is dry))) W (the windscreen is dry)]] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if it rains for 1 minute
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the wipers are activated within 30 seconds
+					C[2]==> Classification: act 
+					C[3]==> Extracted Text: before the windscreen is dry
+					C[3]==> Classification: actScope 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_42:]
+		text: if the airbag is activated within 5 ms, an emergency signal is sent within 10 seconds.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if the airbag is activated within 5 ms, an emergency signal is sent within 10 seconds.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(the airbag is activated)] ==> [(an emergency signal is sent)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if the airbag is activated within 5 ms
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: an emergency signal is sent within 10 seconds
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_3:]
+		text: the fuel display blinks while the fuel level is low.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: the fuel display blinks while the fuel level is low.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [AG((((R)) ∧ ¬((¬ Q))) ==> A[(AF((P) v ((¬ Q)))) W ((¬ Q))])] )
+					CTL-Formula: AG( [AG((((the fuel level is low)) ∧ ¬((¬ the fuel level is low))) ==> A[(AF((the fuel display blinks) v ((¬ the fuel level is low)))) W ((¬ the fuel level is low))])] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the fuel display blinks
+					C[1]==> Classification: act 
+					C[2]==> Extracted Text: while the fuel level is low
+					C[2]==> Classification: actScope 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_1:]
+		text:  the wipers are active while it rains.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text:  the wipers are active while it rains.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: A( [(P)] )
+					CTL-Formula: A( [(the wipers are active)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the wipers are active
+					C[1]==> Classification: act 
+					C[2]==> Extracted Text: are active while it rains
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_7:]
+		text: the fuel display blinks for at most 10 seconds if the fuel level is low.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: the fuel display blinks for at most 10 seconds if the fuel level is low.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(the fuel level is low)] ==> [(the fuel display blinks)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the fuel display blinks for at most 10 seconds
+					C[1]==> Classification: act 
+					C[2]==> Extracted Text: if the fuel level is low
+					C[2]==> Classification: cond 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_5:]
+		text: the wipers are active for at most 10 seconds while it rains.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: the wipers are active for at most 10 seconds while it rains.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [AG((((R)) ∧ ¬((¬ Q))) ==> A[(AF((P) v ((¬ Q)))) W ((¬ Q))])] )
+					CTL-Formula: AG( [AG((((it rains)) ∧ ¬((¬ it rains))) ==> A[(AF((the wipers are active) v ((¬ it rains)))) W ((¬ it rains))])] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the wipers are active for at most 10 seconds
+					C[1]==> Classification: act 
+					C[2]==> Extracted Text: while it rains
+					C[2]==> Classification: actScope 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_9:]
+		text: if a crash is detected, an emergency signal is sent within 10 seconds.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if a crash is detected, an emergency signal is sent within 10 seconds.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(a crash is detected)] ==> [(an emergency signal is sent)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if a crash is detected
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: an emergency signal is sent within 10 seconds
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_27:]
+		text: the motor is RCMVAL_on within 1 second.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: the motor is RCMVAL_on within 1 second.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] )
+					CTL-Formula: AG( [(the motor is RCMVAL_on)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the motor is RCMVAL_on within 1 second.
+					C[1]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_15:]
+		text: if it rains, the wipers are RCMVAL_on after 30 seconds.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if it rains, the wipers are RCMVAL_on after 30 seconds.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(it rains)] ==> [(the wipers are RCMVAL_on)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if it rains
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the wipers are RCMVAL_on after 30 seconds
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_37:]
+		text: if the vehicle in front decelerates and the vehicle decelerates, the vehicle decelerates before the safety distance is restored.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if the vehicle in front decelerates and the vehicle decelerates, the vehicle decelerates before the safety distance is restored.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [((P) AND (Q))] ==> [A[((AF((R) v (S))) v AG(¬(S))) W (S)]] )
+					CTL-Formula: AG( [((the vehicle in front decelerates decelerates) AND (the vehicle in front decelerates decelerates))] ==> [A[((AF((the vehicle decelerates) v (restored))) v AG(¬(restored))) W (restored)]] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if the vehicle in front decelerates the vehicle decelerates
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the vehicle decelerates
+					C[2]==> Classification: act 
+					C[3]==> Extracted Text: before the safety distance is restored
+					C[3]==> Classification: actScope 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_25:]
+		text: the light is RCMVAL_on.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: the light is RCMVAL_on.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] )
+					CTL-Formula: AG( [(the light is RCMVAL_on)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the light is RCMVAL_on
+					C[1]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_13:]
+		text: if it rains, the wipers are RCMVAL_on for 30 seconds.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if it rains, the wipers are RCMVAL_on for 30 seconds.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(it rains)] ==> [(the wipers are RCMVAL_on)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if it rains
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the wipers are RCMVAL_on for 30 seconds
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+	  ID: [req_35:]
+		text: if the lights are on and it is dark, the lights turn on for at least 1 second after the lights turn off and it is dark.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if the lights are on and it is dark, the lights turn on for at least 1 second after the lights turn off and it is dark.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [((P) AND (Q))] ==> [((R) AND (S))] )
+					CTL-Formula: AG( [((the lights are on) AND (it is dark))] ==> [((it is dark) AND (the lights turn on))] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if the lights are on
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: if it is dark
+					C[2]==> Classification: cond 
+					C[3]==> Extracted Text: the lights turn on for at least 1 second
+					C[3]==> Classification: act 
+					C[4]==> Extracted Text: after the lights turn off
+					C[4]==> Classification: null 
+					C[5]==> Extracted Text: it is dark
+					C[5]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_19:]
+		text: if it rains for 1 minute, the wipers are activated within 30 seconds.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if it rains for 1 minute, the wipers are activated within 30 seconds.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(it rains)] ==> [(the wipers are activated)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if it rains for 1 minute
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the wipers are activated within 30 seconds
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_29:]
+		text: the airbag is activated after a crash is detected.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: the airbag is activated after a crash is detected.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [AG((Q) ==> AG(AF(P)))] )
+					CTL-Formula: AG( [AG((a crash is detected) ==> AG(AF(the airbag is activated)))] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: the airbag is activated
+					C[1]==> Classification: act 
+					C[2]==> Extracted Text: after a crash is detected
+					C[2]==> Classification: actScope 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_17:]
+		text: if it is dark and the lights are RCMVAL_on, the lights are RCMVAL_on before it is bright.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if it is dark and the lights are RCMVAL_on, the lights are RCMVAL_on before it is bright.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [A[((AF(((Q) AND (R)) v (P))) v AG(¬(P))) W (P)]] ==> [(S)] )
+					CTL-Formula: AG( [A[((AF(((it is dark) AND (the lights are RCMVAL_on)) v (it is bright))) v AG(¬(it is bright))) W (it is bright)]] ==> [(the lights are RCMVAL_on)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if it is dark
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the lights are RCMVAL_on
+					C[2]==> Classification: act 
+					C[3]==> Extracted Text: if the lights are RCMVAL_on
+					C[3]==> Classification: cond 
+					C[4]==> Extracted Text: before it is bright
+					C[4]==> Classification: preScope 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_39:]
+		text: if the vehicle in front decelerates and the vehicle decelerates, the vehicle decelerates before the safety distance is restored within 2 seconds.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if the vehicle in front decelerates and the vehicle decelerates, the vehicle decelerates before the safety distance is restored within 2 seconds.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [((P) AND (Q))] ==> [A[((AF((R) v (S))) v AG(¬(S))) W (S)]] )
+					CTL-Formula: AG( [((the vehicle in front decelerates decelerates) AND (the vehicle in front decelerates decelerates))] ==> [A[((AF((the vehicle decelerates) v (restored))) v AG(¬(restored))) W (restored)]] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if the vehicle in front decelerates the vehicle decelerates
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the vehicle decelerates
+					C[2]==> Classification: act 
+					C[3]==> Extracted Text: before the safety distance is restored within 2 seconds
+					C[3]==> Classification: actScope 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_41:]
+		text: if the wipers are active within the next 30 seconds, the wipers are active for at most 30 seconds or before the windshield is dry.
+
+		<ReqSentence>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_23:]
+		text: if it rains for 1 minute, the wipers are active for 30 seconds after 1 minute.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if it rains for 1 minute, the wipers are active for 30 seconds after 1 minute.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(it rains)] ==> [(the wipers are active)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if it rains for 1 minute
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the wipers are active for 30 seconds after 1 minute
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_45:]
+		text: if it rains and the wipers are active, the wipers are active within the next 30 seconds.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if it rains and the wipers are active, the wipers are active within the next 30 seconds.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [((P) AND (Q))] ==> [(R)] )
+					CTL-Formula: AG( [((it rains) AND (the wipers are active))] ==> [(the wipers are active within the next 30 seconds)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if it rains
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: if the wipers are active
+					C[2]==> Classification: cond 
+					C[3]==> Extracted Text: the wipers are active within the next 30 seconds
+					C[3]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_11:]
+		text: if it rains and the wipers are active, the wipers are active for 30 seconds.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if it rains and the wipers are active, the wipers are active for 30 seconds.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [((P) AND (Q))] ==> [(R)] )
+					CTL-Formula: AG( [((it rains) AND (the wipers are active))] ==> [(the wipers are active)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if it rains
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: if the wipers are active
+					C[2]==> Classification: cond 
+					C[3]==> Extracted Text: the wipers are active for 30 seconds
+					C[3]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_33:]
+		text: if a crash is detected, the airbag is activated within 5 ms, after
+an emergency signal is sent for 10 seconds.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if a crash is detected, the airbag is activated within 5 ms, after an emergency signal is sent for 10 seconds..
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [AG((R) ==> AG(AF(Q)))] )
+					CTL-Formula: AG( [(a crash is detected)] ==> [AG((an emergency signal is sent) ==> AG(AF(the airbag is activated)))] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if a crash is detected
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the airbag is activated within 5 ms
+					C[2]==> Classification: act 
+					C[3]==> Extracted Text: after an emergency signal is sent for 10 seconds
+					C[3]==> Classification: actScope 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_21:]
+		text: if it rains for 1 minute, the wipers are active for 30 seconds within 1 minute.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if it rains for 1 minute, the wipers are active for 30 seconds within 1 minute.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [(Q)] )
+					CTL-Formula: AG( [(it rains)] ==> [(the wipers are active)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if it rains for 1 minute
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the wipers are active for 30 seconds within 1 minute
+					C[2]==> Classification: act 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_43:]
+		text: if it is dark and the lights are RCMVAL_on , the lights are RCMVAL_on before it is bright .
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if it is dark and the lights are RCMVAL_on , the lights are RCMVAL_on before it is bright .
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [A[((AF(((Q) AND (R)) v (P))) v AG(¬(P))) W (P)]] ==> [(S)] )
+					CTL-Formula: AG( [A[((AF(((it is dark) AND (the lights are RCMVAL_on)) v (it is bright))) v AG(¬(it is bright))) W (it is bright)]] ==> [(the lights are RCMVAL_on)] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if it is dark
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the lights are RCMVAL_on
+					C[2]==> Classification: act 
+					C[3]==> Extracted Text: if the lights are RCMVAL_on
+					C[3]==> Classification: cond 
+					C[4]==> Extracted Text: before it is bright
+					C[4]==> Classification: preScope 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_31:]
+		text: if the front vehicle decelerates, the vehicle decelerates before the safety_distance is restored for at most 2 seconds.
+
+		<ReqSentence>
+			<PR>
+				Id: [1]
+				text: if the front vehicle decelerates, the vehicle decelerates before the safety_distance is restored for at most 2 seconds.
+				<Formal-Representation>
+					CTL-AbbrevatedFormula: AG( [(P)] ==> [A[((AF((Q) v (R))) v AG(¬(R))) W (R)]] )
+					CTL-Formula: AG( [(the front vehicle decelerates)] ==> [A[((AF((the vehicle decelerates) v (the safety_distance is restored))) v AG(¬(the safety_distance is restored))) W (the safety_distance is restored)]] )
+				</Formal-Representation>
+				<ExtractedElements>
+					C[1]==> Extracted Text: if the front vehicle decelerates
+					C[1]==> Classification: cond 
+					C[2]==> Extracted Text: the vehicle decelerates
+					C[2]==> Classification: act 
+					C[3]==> Extracted Text: before the safety_distance is restored for at most 2 seconds
+					C[3]==> Classification: actScope 
+				</ExtractedElements>
+			</PR>
+		</ReqSentence>
+	</Requirement>
+
+</SucceededRequirement>
+</log>
